@@ -16,7 +16,7 @@ const TextScreen = () => {
                 value={name}
                 onChangeText={(newNameValue) => setName(newNameValue)}
             />
-            <Text>Enter a password with more than five characters:</Text>
+            <Text>Enter a password with at least five characters:</Text>
             <TextInput
                 style={styles.input}
                 autoCapitalize='none'
@@ -25,7 +25,7 @@ const TextScreen = () => {
                 onChangeText={(newPasswordValue) => setPassword(newPasswordValue)}
             />
             <Text>Name: {name}</Text>
-            {(password.length > 5)
+            {(password.length >= 5)
                 ? <Text style={{ color: 'green' }}>Password satisfies the length condition</Text>
                 : <Text style={{ color: 'red' }}>Password does not satisfy the length condition</Text>
             }
